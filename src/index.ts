@@ -1,55 +1,19 @@
+// Import JSON data with require (node doesn't work with JSON imports in ESM mode, lmao what? idk requires are way reliable. and they work at least)
 const couriersData = require("../data/couriers.json");
 const ordersData = require("../data/orders.json");
 
-export type GeoCoordinates = {
-  latitude: number;
-  longitude: number;
-};
+// Import types
+import { Courier, Order } from "./types";
 
-export type Order = {
-  id: string;
-  pointA: GeoCoordinates;
-  pointB: GeoCoordinates;
-  cost: number;
-};
+// Main logic file
+import { assignOrdersToCouriers } from "./logic";
 
-export type Courier = {
-  id: string;
-  location: GeoCoordinates;
-};
-
-export function assignOrdersToCouriers(
-  orders: Order[],
-  couriers: Courier[]
-): { [courierId: string]: Order[] } {
-  let assignments: { [courierId: string]: Order[] } = {};
-  couriers.forEach((courier) => (assignments[courier.id] = []));
-
-  orders.forEach((order) => {
-    let closestCourier: Courier | null = null;
-    let shortestDistance = Number.MAX_VALUE;
-
-    couriers.forEach((courier) => {
-      const distance = Math.sqrt(
-        Math.pow(order.pointA.latitude - courier.location.latitude, 2) +
-          Math.pow(order.pointA.longitude - courier.location.longitude, 2)
-      );
-      if (distance < shortestDistance) {
-        closestCourier = courier;
-        shortestDistance = distance;
-      }
-    });
-
-    if (closestCourier) {
-      assignments[closestCourier["id"]].push(order);
-    }
-  });
-
-  return assignments;
-}
-
+// Insert data into constants which are in their respective type
 const couriers: Courier[] = couriersData;
 const orders: Order[] = ordersData;
 
+// Call main logic
 const assignments = assignOrdersToCouriers(orders, couriers);
+
+// Output
 console.log(JSON.stringify(assignments, null, 2));

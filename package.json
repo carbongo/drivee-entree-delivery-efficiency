@@ -1,4 +1,12 @@
 {
+  "name": "drivee-entree-delivery-efficiency",
+  "version": "1.0.0",
+  "author": "George An <carbongo@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carbongo/drivee-entree-delivery-efficiency.git"
+  },
+  "main": "dist/index.js",
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "npx tsc",
