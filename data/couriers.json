@@ -1,0 +1,14 @@
+[
+  {
+    "id": "courier1",
+    "location": { "latitude": 62.0279509, "longitude": 129.6854387 }
+  },
+  {
+    "id": "courier2",
+    "location": { "latitude": 62.0172699, "longitude": 129.7045707 }
+  },
+  {
+    "id": "courier3",
+    "location": { "latitude": 62.0400016, "longitude": 129.7434756 }
+  }
+]

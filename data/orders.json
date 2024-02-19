@@ -1,0 +1,20 @@
+[
+  {
+    "id": "order1",
+    "pointA": { "latitude": 62.035399, "longitude": 129.6729197 },
+    "pointB": { "latitude": 62.0275058, "longitude": 129.7291531 },
+    "cost": 30
+  },
+  {
+    "id": "order2",
+    "pointA": { "latitude": 62.0405799, "longitude": 129.7373667 },
+    "pointB": { "latitude": 62.0520559, "longitude": 129.7010737 },
+    "cost": 45
+  },
+  {
+    "id": "order3",
+    "pointA": { "latitude": 62.0215935, "longitude": 129.7159694 },
+    "pointB": { "latitude": 62.024721, "longitude": 129.7007827 },
+    "cost": 40
+  }
+]
