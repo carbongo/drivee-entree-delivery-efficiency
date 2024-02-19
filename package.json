@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "npx tsc",
+    "dev": "npx tsc -w"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
