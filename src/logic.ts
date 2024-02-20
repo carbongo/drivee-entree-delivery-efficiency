@@ -17,9 +17,11 @@ export function assignOrdersToCouriers(
   orders: Order[],
   couriers: Courier[]
 ): { [courierId: string]: Order[] } {
+
+  // Assignments initialisation
   let assignments: { [courierId: string]: Order[] } = {};
 
-  // Creating an empty list
+  // Creating an empty list of couriers without orders (yet)
   couriers.forEach((courier) => (assignments[courier.id] = []));
 
   // Finding the closest courier for each order
